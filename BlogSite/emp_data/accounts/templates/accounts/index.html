@@ -1,0 +1,49 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Register</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'EmployeeData/css/style.css' %} " >
+    <style>
+    body {
+        background-image: url('{% static "images/index.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: yellow;
+    }
+    </style>
+
+</head>
+<body>
+
+<br>
+<div class="container" align="center">
+<header>
+<h1>This is the home page for our BLoG site</h1>
+</header>
+<br>
+
+<p>To enter in Blog site follow the process</p>
+
+
+
+<br>
+<h4> If New Than Register Here <a href="register">REGISTER</a></h4>
+<br>
+
+<h4>If Already a User Than Login To See Data <a href="login">LOGIN</a></h4>
+
+
+
+</div>
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

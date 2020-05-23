@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <style>
+          body {
+            background-image: url('{% static "images/i.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: yellow;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>login page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/util.css' %}">
+
+          <link rel="stylesheet" type="text/css" href="{%static 'accounts/css/style.css' %} " >
+
+
+
+</head>
+<body>
+<div class="contaier mt-5">
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">login</button>
+
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'accounts/basic.html' %}
+
+
+{% block css %}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+ <div class="container my-2">
+   <div class="topnav my-3">
+       <a  name="user mt-3"> <h5 style="color:white;">Log In name :<font color="cyan"> <b>{{request.user.username }}</b></font> </h5></a>
+       <a href="{%url 'logout' %}"> <h4 style="color:white;">After finish : <font color="red">Log out</font> </h4> </a>
+
+   </div>
+    </div>
+
+<div class="container mt-5">
+    <div class="row mb-2">
+{% for item in blog %}
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary" style="color:cyan">{{ item.title }}</strong>
+          <h3 class="mb-0" style="color:cyan">Click continue to Read content</h3>
+          <div class="mb-1 text-muted" style="color:white;">{{ item.pub_date }}</div>
+          <p class="card-text mb-auto" style="color:red"></p>
+          <a href="/post/{{item.id}}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+ <img src="/media/" class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" style="color:white;" alt="post your image">
+        </div>
+      </div>
+    </div>
+{% if forloop.counter|divisibleby:2 %}
+    </div>    <div class="row mb-2">
+    {% endif %}
+{% endfor %}
+</div>
+     </div>
+
+
+{% endblock %}

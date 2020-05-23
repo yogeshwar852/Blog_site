@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register page</title>  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{%static 'EmployeeData/css/style.css' %} " >
+    <script src="{%static 'validate.js' %}" ></script>
+    <style>
+          body {
+            background-image: url('{% static "images/i.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">register</button>
+
+</form>
+    </div>
+</body>
+</html>
